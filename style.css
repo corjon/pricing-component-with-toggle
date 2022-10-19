@@ -1,0 +1,241 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  padding: 64px 24px 72px;
+  min-height: 100vh;
+  text-align: center;
+  background-color: #F7F7FE;
+  background-image: url("images/bg-top.svg");
+  background-position: left 196px top -36px;
+  background-repeat: no-repeat;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.our-pricing {
+  min-width: 239px;
+  margin-bottom: 80px;
+}
+  
+h1 {
+  margin-bottom: 40px;
+  font-size: 32px;
+  line-height: 39px;
+  color: #6E728E;
+}
+
+.switch-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 32px;
+}
+
+label input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+label span {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #A2A7F0 0%, #696EDD 100%);
+  border-radius: 16px;
+  transition: 0.25s;
+}
+
+label span::before {
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  left: 28px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.25s;
+}
+
+input:checked + span::before {
+  transform: translateX(-24px);
+}
+
+.our-pricing p {
+  font-size: 15px;
+  line-height: 28px;
+  color: #6E728E;
+  opacity: 0.5;
+}
+
+.card {
+  padding: 31px 29px;
+  margin-bottom: 32px;
+  min-width: 326px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 20px 40px rgba(212, 210, 244, 0.5);
+  border-radius: 10px;
+}
+
+h2 {
+  margin-bottom: 24px;
+  font-size: 18px;
+  line-height: 28px;
+  color: #6E728E;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.amount p:first-child {
+  font-size: 40px;
+  line-height: 49px;
+  letter-spacing: -1.2px;
+  color: #4A4D60;
+}
+
+.amount p:nth-child(2),
+.amount p:nth-child(3) {
+  font-size: 72px;
+  line-height: 71px;
+  letter-spacing: -2.16px;
+  color: #4A4D60;
+}
+
+.amount p:nth-child(3) {
+  display: none;
+}
+
+main:has(input:checked) .amount p:nth-child(2) {
+  display: none;
+}
+
+main:has(input:checked) .amount p:nth-child(3) {
+  display: block;
+}
+
+.plan-details {
+  margin-bottom: 32px;
+}
+
+.plan-details p {
+  padding: 12px 0 12px;
+  font-size: 15px;
+  line-height: 28px;
+  color: #6E728E;
+  border-top: 1px solid hsla(234, 13%, 49%, 0.25);
+}
+
+.plan-details p:last-child {
+  border-bottom: 1px solid hsla(234, 13%, 49%, 0.25);
+}
+
+.middle-card .plan-details p,
+.middle-card .plan-details p:last-child {
+  border-color: hsla(0, 0%, 100%, 0.25);
+}
+
+button {
+  padding: 14px;
+  width: 100%;
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.39286px;
+  color: #FFFFFF;
+  border: none;
+  background: linear-gradient(135deg, #A2A7F0 0%, #696EDD 100%);
+  border-radius: 6px;
+}
+
+.middle-card {
+  background: linear-gradient(135deg, #A2A7F0 0.06%, #696EDD 100.06%);
+}
+
+.middle-card h2,
+.middle-card .amount p,
+.middle-card .plan-details p {
+  color: white;
+}
+
+.middle-card button {
+  color: #6D72DE;
+  background: white;
+}
+
+@media (min-width: 1110px) {
+  body {
+    padding: 71px 195px 103px;
+    background-image: url("images/bg-top.svg"), url("images/bg-bottom.svg");
+    background-position: top right, bottom left;
+  }
+
+  .our-pricing {
+    margin-bottom: 64px;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .card {
+    padding: 31px;
+    width: 350px;
+  }
+
+  .card:first-child {
+    border-radius: 10px 0px 0px 10px;
+  }
+
+  .middle-card {
+    padding: 55px 31px;
+    z-index: 2;
+  }
+
+  .card:last-child {
+    border-radius: 0px 10px 10px 0px;
+  }
+
+  label span {
+    cursor: pointer;
+  }
+
+  label span:hover {
+    opacity: 0.5;
+  }
+
+  button:hover {
+    cursor: pointer;
+    color: #6D72DE;
+    background: #FFFFFF;
+    outline: 1px solid #6D72DE;
+  }
+
+  .middle-card button:hover {
+    color: white;
+    background: transparent;
+    outline: 1px solid #FFFFFF;
+  }
+}
